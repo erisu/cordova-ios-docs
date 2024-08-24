@@ -36,13 +36,14 @@ jobs:
           xcode-version: '15.4.0'
 
       - name: Build DocC
+        working-directory: ./CordovaLib
         run: |
           swift package resolve;
           
           xcodebuild docbuild -scheme Cordova -derivedDataPath /tmp/docbuild -destination 'generic/platform=iOS';
           
           $(xcrun --find docc) process-archive \
-            transform-for-static-hosting /tmp/docbuild/Build/Products/Debug-iphoneos/Cordova.doccarchive \
+                      transform-for-static-hosting /tmp/docbuild/Build/Products/Debug-iphoneos/Cordova.doccarchive \
             --output-path docs \
             --hosting-base-path 'Cordova';
             

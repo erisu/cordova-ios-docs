@@ -3,6 +3,7 @@
 .vscode
 .swiftpm/
 .build/
+CordovaLib/docs/
 *.cso
 tmp
 *.mode1v3
