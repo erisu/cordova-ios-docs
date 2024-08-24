@@ -1,0 +1,17 @@
+# Ignore dot files
+\.(.*)
+
+# yes, not .gitignore
+gitignore
+
+# licenses for both below are in the cordova-ios LICENSE file
+NSData+Base64.h
+NSData+Base64.m
+
+# Xcode Auto Generated Files
+IDEWorkspaceChecks.plist
+
+# Testing Figures
+fixtures
+
+node_modules
