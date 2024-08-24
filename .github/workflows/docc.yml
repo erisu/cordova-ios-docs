@@ -24,7 +24,9 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     runs-on: macos-14
+
     steps:
       - uses: actions/checkout@v4
 
@@ -43,7 +45,7 @@ jobs:
           xcodebuild docbuild -scheme Cordova -derivedDataPath /tmp/docbuild -destination 'generic/platform=iOS';
           
           $(xcrun --find docc) process-archive \
-                      transform-for-static-hosting /tmp/docbuild/Build/Products/Debug-iphoneos/Cordova.doccarchive \
+            transform-for-static-hosting /tmp/docbuild/Build/Products/Debug-iphoneos/Cordova.doccarchive \
             --output-path docs \
             --hosting-base-path 'Cordova';
             
@@ -51,6 +53,7 @@ jobs:
           
 
       - uses: actions/upload-pages-artifact@v3
+        working-directory: ./CordovaLib
         with:
           path: 'docs'
 
