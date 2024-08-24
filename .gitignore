@@ -2,6 +2,7 @@
 .*.sw?
 .vscode
 .swiftpm/
+.build/
 *.cso
 tmp
 *.mode1v3
