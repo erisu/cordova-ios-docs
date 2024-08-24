@@ -47,7 +47,7 @@ jobs:
           $(xcrun --find docc) process-archive \
             transform-for-static-hosting /tmp/docbuild/Build/Products/Debug-iphoneos/Cordova.doccarchive \
             --output-path docs \
-            --hosting-base-path 'Cordova';
+            --hosting-base-path 'cordova-ios-docs';
             
           echo "<script>window.location.href += \"/documentation/cordova\"</script>" > docs/index.html;
 
